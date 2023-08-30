@@ -19,14 +19,14 @@ function FeaturedProjects() {
 
   return (
     <div className="flex flex-col max-w-7xl">
-      <div className="flex flex-col">
+      {/* <div className="flex flex-col">
         <h3 className="text-purple-300 font-semibold uppercase text-sm">
           Featured projects
         </h3>
         <h2 className="text-3xl font-semibold">
           Projects open for development join them and start contributing today.
         </h2>
-      </div>
+      </div> */}
 
       <div className="flex flex-col md:flex-row my-8 gap-5">
         {/* ------------- Features Card ------------ */}

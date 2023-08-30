@@ -1,17 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', "./src/**/*.{html,js}",
-    "./node_modules/tw-elements/dist/js/**/*.js"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{html,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
   theme: {
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+    },
     extend: {
       colors: {
         // Add Customs Colors Here
-        accent: '#6c47ff',
-        'bg-color': '#0c0129',
+        accent: "#6c47ff",
+        "bg-color": "#0c0129",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },
-  plugins: [require('daisyui', 'tailwind-scrollbar', 'tw-elements/dist/plugin.cjs')],
+  plugins: [
+    require("daisyui", "tailwind-scrollbar", "tw-elements/dist/plugin.cjs"),
+  ],
   daisyui: {
     themes: [],
     styled: false,

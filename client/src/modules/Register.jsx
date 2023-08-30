@@ -5,11 +5,11 @@ import FormContainer from '../components/form/FormContainer';
 // import Skate from '/Run_Skate.png';
 import developer from '../../public/developer.svg';
 import organization from '../../public/organization.svg';
-import Skate from '../../public/Run_Skate.png';
+import register from '../../public/register.jpg';
 
 function Register() {
   return (
-    <FormContainer image={Skate} className="relative h-full w-full">
+    <FormContainer image={register} className="relative h-1.5 w-full">
       <div className="flex flex-col w-full relative h-full py-3 items-center transition-transform gap-5 justify-center">
         <Link
           className="flex flex-col text-xl transition items-center

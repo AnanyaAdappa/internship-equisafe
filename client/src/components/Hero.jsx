@@ -69,7 +69,7 @@ function Hero() {
             href="/register"
             className="flex p-3 md:p-4 items-center justify-center"
           >
-            Book a free call
+            Start your journey
             {' '}
             <RiArrowRightSLine className="ml-2 text-md" />
           </a>
@@ -92,26 +92,15 @@ function Hero() {
 
       <div className="flex md:px-[10%]">
         <img
-          alt="hero"
-          src="/new-hero.png"
+          alt="insurance"
+          src="/insurance.jpg"
           className=""
         />
       </div>
       <h2
-        className="text-center text-3xl md:text-4xl font-semibold my-4"
+        className="text-center text-3xl md:text-4xl font-semibold my-4 text-cyan-950"
       >
-        Completed
-        {' '}
-        <span className="blue-gradient">
-          {projects.length}
-          +
-        </span>
-        {' '}
-        projects and
-        <br />
-        <span className="blue-gradient">thousands</span>
-        {' '}
-        of users on platform
+       "Protecting your today ensures a<span className="text-blue-400"> secure</span> tomorrow"
       </h2>
     </div>
   );

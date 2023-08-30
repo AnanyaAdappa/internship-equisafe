@@ -3,21 +3,21 @@ import NavMobile from "./NavMobile";
 
 const navigations = [
   {
-    name: "Home",
+    name: "HOME",
     path: "/",
   },
   {
-    name: "Projects",
+    name: "CATEGORIES",
     path: "/projects",
   },
   {
-    name: "Companies",
+    name: "COMPANIES",
     path: "/companies",
   },
-  {
-    name: "Developer",
-    path: "/developers",
-  },
+  // {
+  //   name: "Developer",
+  //   path: "/developers",
+  // },
 ];
 
 export default function NavMenu() {
@@ -28,11 +28,15 @@ export default function NavMenu() {
           {navigations.map((navigation, index) => (
             <li
               key={index}
-              className="mr-5 capitalize transition-all items-center hover:text-accent z-50"
+              className="mr-5 capitalize transition-all items-center hover:text-accent z-50 font-poppins"
             >
               <NavLink
                 to={navigation.path}
-                className={(navClass) => (navClass.isActive ? "text-accent" : "")}
+                className={(navClass) =>
+                  navClass.isActive
+                    ? "text-accent font-poppins"
+                    : "font-poppins"
+                }
               >
                 {navigation.name}
               </NavLink>
