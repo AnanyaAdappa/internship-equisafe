@@ -66,7 +66,7 @@ function Hero() {
       <div className="flex my-8 items-center justify-center gap-10 z-[1]">
         <div className="flex justify-between  items-center cursor-pointer bg-accent hover:bg-accent/50 rounded-lg text-white font-semibold text-center bg-blue-400">
           <a
-            href="/register"
+            href="/register/developer"
             className="flex p-3 md:p-4 items-center justify-center"
           >
             Start your journey

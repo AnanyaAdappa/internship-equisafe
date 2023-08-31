@@ -25,7 +25,7 @@ export default function AppFeatures() {
       {/* ------------- Features Card ------------ */}
 
       <div className="flex flex-col md:flex-row my-8 gap-5">
-        <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5">
+        <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5 w-4/5">
           {/* <img alt="card" src="/SVG/card-1.svg" /> */}
           <h2 className="font-semibold text-xl">
             Comprehensive Policy Selection
@@ -38,7 +38,7 @@ export default function AppFeatures() {
             about your insurance.
           </p>
         </div>
-        <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5">
+        <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5 w-4/5">
           {/* <img alt="card-2" src="/SVG/card-1.svg" /> */}
           <h2 className="font-semibold text-xl">
             {" "}
@@ -51,7 +51,7 @@ export default function AppFeatures() {
             select the policy that aligns with your requirements.
           </p>
         </div>
-        <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5">
+        <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5 w-4/5">
           {/* <img alt="card-2" src="/SVG/card-1.svg" /> */}
           <h2 className="font-semibold text-xl">Tailored Policies for You</h2>
           <p className="opacity-75">

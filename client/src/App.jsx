@@ -100,7 +100,8 @@ function App() {
           />
           <Route
             path="/register"
-            element={<Register />}
+            // element={<Register />}
+            element={<RegisterDeveloper />}
           />
           <Route
             path="/register/developer"

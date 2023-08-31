@@ -9,6 +9,7 @@ export default {
   theme: {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
+      merriweather: ["Merriweather", "serif"],
     },
     extend: {
       colors: {
