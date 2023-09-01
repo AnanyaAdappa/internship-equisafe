@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import React from "react";
-import { BsFillBookmarkPlusFill } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { BsFillBookmarkPlusFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const ProjectList = ({ projectsProp = [] }) => {
   const authToken = localStorage.getItem("authToken");
@@ -20,17 +20,17 @@ const ProjectList = ({ projectsProp = [] }) => {
       title,
       description,
       timeframe,
-      thumbnail,
+      thumbnail,  
       project_type,
       required_personnel,
-    //   featured,
-    //   board,
-    //   techstack,
-    //   fixed_price,
+      //   featured,
+      //   board,
+      //   techstack,
+      //   fixed_price,
     } = projects;
 
     return (
-    // giving key prop to react fragment is imp to avoid unique key warnings
+      // giving key prop to react fragment is imp to avoid unique key warnings
       <React.Fragment key={index}>
         {/* ---------------- Project List--------------- */}
         <Link
@@ -61,7 +61,7 @@ const ProjectList = ({ projectsProp = [] }) => {
                     <h3 className="listing-content-data">
                       {required_personnel}
                     </h3>
-                    <h4 className="listing-content-constant">Role</h4>
+                    <h4 className="listing-content-constant"></h4>
                   </div>
                 </div>
                 <div className="flex flex-col w-1/2 items-start justify-start gap-3">

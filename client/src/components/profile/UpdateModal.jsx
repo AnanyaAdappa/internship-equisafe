@@ -193,7 +193,7 @@ function UpdateModal({ developer, fetchProfile }) {
                   border-gray-300 rounded-md"
               />
             </div>
-            <div className="relative">
+            {/* <div className="relative">
               <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                 Educational Qualification
               </p>
@@ -209,8 +209,8 @@ function UpdateModal({ developer, fetchProfile }) {
                   focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"
               />
-            </div>
-            <div className="relative">
+            </div> */}
+            {/* <div className="relative">
               <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                 Technical Role
               </p>
@@ -226,9 +226,9 @@ function UpdateModal({ developer, fetchProfile }) {
                   focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"
               />
-            </div>
+            </div> */}
             {/* ----------------Image Update-------------- */}
-            <div className="relative">
+            {/* <div className="relative">
               <div className="flex w-full justify-center">
                 <div className="box-decoration w-full py-6">
                   <label
@@ -272,8 +272,8 @@ function UpdateModal({ developer, fetchProfile }) {
                 </div>
               </div>
 
-            </div>
-            <div className="relative">
+            </div> */}
+            {/* <div className="relative">
               <p
                 className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                   absolute"
@@ -289,8 +289,8 @@ function UpdateModal({ developer, fetchProfile }) {
                   focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                   border-gray-300 rounded-md"
               />
-            </div>
-            <div className="relative">
+            </div> */}
+            {/* <div className="relative">
               <p
                 className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                   absolute"
@@ -305,8 +305,8 @@ function UpdateModal({ developer, fetchProfile }) {
                 onChange={handleSkills}
                 className="border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
               />
-            </div>
-            <div className="relative">
+            </div> */}
+            {/* <div className="relative">
               <p
                 className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                   absolute"
@@ -324,8 +324,8 @@ function UpdateModal({ developer, fetchProfile }) {
                 })}
                 className="border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
               />
-            </div>
-            <div className="relative">
+            </div> */}
+            {/* <div className="relative">
               <p
                 className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                   absolute"
@@ -343,8 +343,8 @@ function UpdateModal({ developer, fetchProfile }) {
                 })}
                 className="border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
               />
-            </div>
-            <div className="mb-4">
+            </div> */}
+            {/* <div className="mb-4">
               <label
                 htmlFor="flexSwitchChecked"
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -364,7 +364,7 @@ function UpdateModal({ developer, fetchProfile }) {
                   />
                 </div>
               </label>
-            </div>
+            </div> */}
           </div>
           <button
             type="button"

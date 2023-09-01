@@ -8,11 +8,13 @@ xl:px-5 lg:flex-row overflow-x-clip"
         <div className="flex flex-col items-center w-full pt-5 md:px-10  lg:pt-1 lg:flex-row">
           <div className="hidden md:flex w-full h-full bg-cover relative max-w-md lg:max-w-2xl lg:w-1/2">
             <div className="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
-              <img
+              {/* <img
                 alt="login-img"
                 src={image}
                 className="flex w-full object-cover h-[50vh] p-0"
-              />
+              /> */}
+
+              <img src="signin.jpg" alt=""  className="place-items-center"/>
             </div>
           </div>
           <div className="w-full flex items-center mx-0  relative z-10 max-w-2xl lg:mt-0 lg:w-1/2">
@@ -20,14 +22,14 @@ xl:px-5 lg:flex-row overflow-x-clip"
               className="flex w-full flex-col items-start h-[80vh] md:h-[80vh] justify-start p-5 lg:p-10 bg-white shadow-2xl rounded-xl
     relative z-10"
             >
-              <p className="w-full text-2xl xl:text-4xl font-medium text-center leading-snug relative">
+              <p className="w-full text-2xl xl:text-4xl font-medium text-center leading-snug relative text-cyan-800">
                 Sign in to our platform
               </p>
               {children}
             </div>
             <svg
               viewBox="0 0 91 91"
-              className="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-yellow-300
+              className="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-sky-900
     fill-current"
             >
               <g
@@ -379,7 +381,7 @@ xl:px-5 lg:flex-row overflow-x-clip"
             </svg>
             <svg
               viewBox="0 0 91 91"
-              className="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-indigo-500
+              className="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-sky-900
     fill-current"
             >
               <g

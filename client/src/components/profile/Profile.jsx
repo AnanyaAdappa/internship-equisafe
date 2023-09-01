@@ -160,20 +160,20 @@ export default function Profile() {
   }
   if (localStorage.getItem('isDev')) {
     return (
-      <div className="flex flex-col max-w-screen-sm md:max-w-none lg:max-w-none items-center justify-center mx-3">
+      <div className="flex flex-col max-w-screen-sm md:max-w-none lg:max-w-none items-center justify-center mx-3 bg-sky-100">
         <div
           className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
             items-center border z-10 relative
            border-slate-300  bg-white/50 rounded-2xl my-6 mb-10"
         >
           <div className="flex justify-start lg:items-center w-full mt-6 items-start  place-content-start md:gap-[5%] border-b border-slate-300 px-5 py-7 relative">
-            <div className="flex items-center relative justify-center h-24 lg:h-80 p-0 m-0">
+            {/* <div className="flex items-center relative justify-center h-24 lg:h-80 p-0 m-0">
               <img
                 alt="profile"
                 src={developer?.profile_pic}
                 className="inline-block object-cover aspect-square  h-full p-0 shadow shadow-accent rounded-full"
               />
-            </div>
+            </div> */}
             <UpdateModal
               developer={developer}
               setDeveloper={setDeveloper}
@@ -194,7 +194,7 @@ export default function Profile() {
 
             <div className="flex flex-col justify-between lg:pb-16 h-full  gap-3">
               {/* --------Developer Name------------------- */}
-              <h1 className="text-3xl lg:text-5xl font-medium text-slate-900">
+              <h1 className="text-3xl lg:text-5xl font-medium text-slate-900 capitalize">
                 {developer?.fname}
                 {' '}
                 {developer?.lname}
@@ -211,16 +211,16 @@ export default function Profile() {
           <div className="flex flex-col-reverse md:flex-row justify-start w-full items-start place-content-start">
             {/* ----------Col-1----------------*/}
             <div className="flex flex-col gap-6 px-5 py-7  mr-2  md:w-1/3">
-              <div className="flex flex-col gap-2  ">
+              {/* <div className="flex flex-col gap-2  ">
                 <h1 className="text-lg text-slate-900 font-medium">Role</h1>
                 <p className="description">{developer?.technical_role}</p>
-              </div>
-              <div className="flex flex-col gap-2">
+              </div> */}
+              {/* <div className="flex flex-col gap-2">
                 <h1 className="text-lg text-slate-900 font-medium">
                   Education
                 </h1>
                 <p className="description">{developer?.qualification}</p>
-              </div>
+              </div> */}
               <div className="flex flex-col gap-2">
                 <h1 className="text-lg text-slate-900 font-medium">Contact</h1>
                 <Link
@@ -237,28 +237,28 @@ export default function Profile() {
                   <FaPhone />
                   {developer?.phone}
                 </Link>
-                <Link
+                {/* <Link
                   to={developer?.linkedin}
                   target="_blank"
                   className="contact-dev"
                 >
                   <BsLinkedin />
                   {developer?.linkedin}
-                </Link>
-                <Link
+                </Link> */}
+                {/* <Link
                   to={developer?.github}
                   target="_blank"
                   className="contact-dev"
                 >
                   <BsGithub />
                   {developer?.github}
-                </Link>
+                </Link> */}
               </div>
             </div>
-            {/* ----------Col-2----------------*/}
+            {/* ----------Col-2----------------
             <div className="flex flex-col border-b md:border-b-0 md:border-l md:pl-2 border-slate-300 gap-6 md:w-2/3 pb-10">
               <div className="flex flex-col gap-2 px-5 py-7">
-                {/* ---------Domain------------ */}
+                ---------Domain------------
                 <h1 className="text-2xl font-semibold mb-3">
                   {developer?.technical_role}
                 </h1>
@@ -281,7 +281,7 @@ export default function Profile() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* ---------------Proposals---------------- */}

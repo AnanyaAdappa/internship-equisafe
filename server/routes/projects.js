@@ -4,44 +4,55 @@ const cloudinary = require("cloudinary").v2;
 const Project = require("../models/project");
 const ApiError = require("../utils/ApiError");
 const controller = require("../controllers/project");
-const { isOrganizationAuthenticated, roleBasedAuthentication } = require("../middleware/isAuthenticated");
+const {
+  isOrganizationAuthenticated,
+  roleBasedAuthentication,
+  isDeveloperAuthenticated,
+} = require("../middleware/isAuthenticated");
 
-router.route("/")
+router
+  .route("/")
   .get((req, res, next) => {
     // Project.find()
     // Project.find({ title: "Raw" })
     // Project.find(req.query)
-
+    console.log("HIIII");
     // this queryObject is beneficial when some wrong query which is not intended is used in the URL
     const queryObject = {};
 
     // destructuring query keys from URL.
-    const {
-      _id, title, techStack, board, featured, open, sort, bookmark,
-    } = req.query;
+    const { _id, title, techStack, board, featured, open, sort, bookmark } =
+      req.query;
     // req.query helps for finding only those specific documents which are queried from the URL like /projects?title=...&board=agile
 
     // DEALING with case insensitive or not.
     // regex enables searching for partial values too. Like if mum is typed then Mumbai results will still come.
-    if (title) { // FOR CASE-INSENSITIVE SEARCHING
+    if (title) {
+      // FOR CASE-INSENSITIVE SEARCHING
       queryObject.title = { $regex: title, $options: "i" };
     }
-    if (techStack) { // FOR CASE-INSENSITIVE SEARCHING
+    if (techStack) {
+      // FOR CASE-INSENSITIVE SEARCHING
       queryObject.techStack = { $regex: techStack, $options: "i" };
     }
-    if (board) { // FOR CASE-INSENSITIVE SEARCHING
+    if (board) {
+      // FOR CASE-INSENSITIVE SEARCHING
       queryObject.board = { $regex: board, $options: "i" };
     }
-    if (_id) { // FOR SEARCHING
+    if (_id) {
+      // FOR SEARCHING
       queryObject._id = _id;
     }
-    if (open) { // FOR FILTERING
+    if (open) {
+      // FOR FILTERING
       queryObject.open = open;
     }
-    if (bookmark) { // FOR FILTERING saved Developer's projects.
+    if (bookmark) {
+      // FOR FILTERING saved Developer's projects.
       queryObject.bookmark = bookmark;
     }
-    if (featured) { // FOR FILTERING
+    if (featured) {
+      // FOR FILTERING
       // this is a boolean field so no need to worry about making it case insensitive as boolean always should be case sensitive.
       queryObject.featured = featured;
     }
@@ -49,10 +60,14 @@ router.route("/")
     // had to put the find method in a variable as we needed to put sort over it again.
     // `populate` is used to fetch the foreign key referenced document in the find response based on the keys passed as an argument to the method.
     // sending only the selected fields in the 2nd arg of populate()
-    let fetchedData = Project.find(queryObject).populate("lead", "uid fname lname email profile_pic").populate("proj_organization", "uid name banner_img").populate("members", "uid fname lname email profile_pic");
+    let fetchedData = Project.find(queryObject)
+      .populate("lead", "uid fname lname email profile_pic")
+      .populate("proj_organization", "uid name banner_img")
+      .populate("members", "uid fname lname email profile_pic");
 
     // if user has written `?sort=createdAt,updatedAt` with multiple sort conditions in URL :
-    if (sort) { // FOR SORTING BASE ON ANY KEY
+    if (sort) {
+      // FOR SORTING BASE ON ANY KEY
       const fixedSort = sort.replace(",", " ");
       // Sorting is achieved by sort("createAt updatedAt") function
       fetchedData = fetchedData.sort(fixedSort);
@@ -76,14 +91,16 @@ router.route("/")
           });
         }
       })
-      .catch((error) => next(new ApiError(422, "Error fetching projects.", error.toString())));
+      .catch((error) =>
+        next(new ApiError(422, "Error fetching projects.", error.toString()))
+      );
   })
 
   // isOrganizationAuthenticated is a middleware
-  .post(isOrganizationAuthenticated, (req, res, next) => {
+  .post(isDeveloperAuthenticated, (req, res, next) => {
     const project = req.body;
     const file = req.files ? req.files.photo : null;
-
+    console.log(project, "project");
     try {
       if (file) {
         // A promise was needed to handle the errors and process the result using then blocks so promisified the cloudinary method as it is not a promise by default.
@@ -99,9 +116,18 @@ router.route("/")
             // *** this if condition is for cloudinaryUpload(file.tempFilePath) promise as it returns error in object form with key `http_code` over here so handling it accordingly for that specific argument of tempFilePath
             // a typo in `tempFilePath` spelling will trigger satisfy this `if` block.
             if (error.http_code) {
-              next(new ApiError(422, "Error creating project!", JSON.stringify(error)));
-            } else { // this error block is for handling errors of the then block to handle any error occured before passing the execution to the controller.
-              next(new ApiError(422, "Error creating project", error.toString()));
+              next(
+                new ApiError(
+                  422,
+                  "Error creating project!",
+                  JSON.stringify(error)
+                )
+              );
+            } else {
+              // this error block is for handling errors of the then block to handle any error occured before passing the execution to the controller.
+              next(
+                new ApiError(422, "Error creating project", error.toString())
+              );
             }
           });
       } else {
@@ -113,10 +139,14 @@ router.route("/")
     }
   });
 
-router.route("/:uid")
+router
+  .route("/:uid")
 
   .get((req, res, next) => {
-    Project.findOne({ uid: req.params.uid }).populate("lead", "uid fname lname email profile_pic").populate("proj_organization", "uid name banner_img").populate("members", "uid fname lname email profile_pic")
+    Project.findOne({ uid: req.params.uid })
+      .populate("lead", "uid fname lname email profile_pic")
+      .populate("proj_organization", "uid name banner_img")
+      .populate("members", "uid fname lname email profile_pic")
       .then((document) => {
         if (!document) {
           throw Error("Project not found");
@@ -127,7 +157,9 @@ router.route("/:uid")
           errors: null,
         });
       })
-      .catch((error) => next(new ApiError(422, "Error fetching project.", error.toString())));
+      .catch((error) =>
+        next(new ApiError(422, "Error fetching project.", error.toString()))
+      );
   })
 
   // isOrganizationAuthenticated is a middleware
@@ -146,12 +178,20 @@ router.route("/:uid")
           })
           .catch((error) => {
             // console.log("Error --", error);
-          // this if condition is for cloudinaryUpload(file.tempFilePath) promise as it returns error in object form with key `http_code` over here so handling it accordingly for that specific argument of tempFilePath
-          // a typo in `tempFilePath` spelling will trigger satisfy this `if` block.
+            // this if condition is for cloudinaryUpload(file.tempFilePath) promise as it returns error in object form with key `http_code` over here so handling it accordingly for that specific argument of tempFilePath
+            // a typo in `tempFilePath` spelling will trigger satisfy this `if` block.
             if (error.http_code) {
-              next(new ApiError(422, "Error updating project!", JSON.stringify(error)));
+              next(
+                new ApiError(
+                  422,
+                  "Error updating project!",
+                  JSON.stringify(error)
+                )
+              );
             } else {
-              next(new ApiError(422, "Error updating project!!", error.toString()));
+              next(
+                new ApiError(422, "Error updating project!!", error.toString())
+              );
             }
           });
       } else {
@@ -179,7 +219,9 @@ router.route("/:uid")
           errors: null,
         });
       })
-      .catch((error) => next(new ApiError(422, "Error deleting project.", error.toString())));
+      .catch((error) =>
+        next(new ApiError(422, "Error deleting project.", error.toString()))
+      );
   });
 
 module.exports = router;

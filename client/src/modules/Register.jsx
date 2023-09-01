@@ -46,3 +46,9 @@ function Register() {
 }
 
 export default Register;
+
+
+
+
+
+// register part which is not required bcz itn will be moved to register part directly

@@ -23,7 +23,7 @@ function Login() {
           />
           <h1 className=" blue-gradient ">Developer</h1>
         </Link>
-        <div className="border-b border-slate-300 w-full"> </div>
+        {/* <div className="border-b border-slate-300 w-full"> </div>
         <Link
           className="flex flex-col text-xl transition items-center justify-center hover:bg-accent/5 hover:font-semibold rounded-lg"
           to="/login/company"
@@ -34,10 +34,14 @@ function Login() {
             className="h-52 lg:h-auto w-full"
           />
           <h1 className=" blue-gradient ">Organization</h1>
-        </Link>
+        </Link> */}
       </div>
     </LoginContainer>
   );
 }
 
 export default Login;
+
+
+
+//login so this is noti required this should derictely be linked to the login part
