@@ -48,10 +48,10 @@ function CompanyListings() {
 
       <div className="gap-0 z-[1] mt-5">
         <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
-          Discover Best Places to Work!
+          Your Shield, Their Reputation
         </h1>
         <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold">
-          Company reviews. Salaries. Interviews. Jobs.
+        Uncover the Best Insurance Companies for Your Peace of Mind
         </h1>
       </div>
 

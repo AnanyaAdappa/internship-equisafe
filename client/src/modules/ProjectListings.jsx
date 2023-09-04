@@ -111,10 +111,10 @@ function ProjectListings() {
 
       <div className="gap-0 z-[1] mt-5">
         <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
-          Find your dream projects
+         Uncover Your Perfect Coverage
         </h1>
         <h1 className=" blue-gradient text-center text-3xl md:text-4xl  font-semibold">
-          Complete Trust & Freedom
+        Your Roadmap to Finding the Best Insurance Policies
         </h1>
 
         {/* ----------------Show Only for Organizations------------ */}
@@ -136,7 +136,7 @@ function ProjectListings() {
       <div className="flex justify-center my-6 relative mx-3">
         <div className="flex lg:w-3/5 flex-col justify-center w-full md:w-4/5 items-start border z-10 border-slate-300  bg-white/50 rounded-2xl py-5">
           <h1 className="text-2xl text-start font-medium text-slate-800 px-5">
-            Projects open for development
+            Categories
           </h1>
           <div className="flex mt-6 w-full justify-between border-b ">
             <div className="tabs gap-4 pl-6">
@@ -145,7 +145,7 @@ function ProjectListings() {
               </button>
               {localStorage.getItem("isDev") ? (
                 <button type="button" className={`tab ${saveBtnState ? "tab-bordered tab-active" : ""}`} onClick={handleSaved}>
-                  Saved Jobs
+                  Saved 
                 </button>
               ) : null}
             </div>
@@ -161,14 +161,13 @@ function ProjectListings() {
           </div>
 
           <p className="mx-5 my-2 text-base">
-            Browse projects that match your experience to a client&apos;s hiring
-            preferences. Ordered by most relevant.
+          Explore Protection, Discover Peace of Mind: Navigating the World of Insurance Policies.
           </p>
           <div className="flex w-full px-4 py-2">
             <Search
               searchInput={searchInput}
               setSearchInput={setSearchInput}
-              searchPlaceholder="Type project title to search.."
+              searchPlaceholder="Type categories to search.."
             />
             {/* <Search /> */}
           </div>
