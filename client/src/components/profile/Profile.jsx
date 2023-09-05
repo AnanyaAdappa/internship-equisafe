@@ -167,13 +167,13 @@ export default function Profile() {
            border-slate-300  bg-white/50 rounded-2xl my-6 mb-10"
         >
           <div className="flex justify-start lg:items-center w-full mt-6 items-start  place-content-start md:gap-[5%] border-b border-slate-300 px-5 py-7 relative">
-            {/* <div className="flex items-center relative justify-center h-24 lg:h-80 p-0 m-0">
+            <div className="flex items-center relative justify-center h-24 lg:h-80 p-0 m-0">
               <img
                 alt="profile"
                 src={developer?.profile_pic}
                 className="inline-block object-cover aspect-square  h-full p-0 shadow shadow-accent rounded-full"
               />
-            </div> */}
+            </div>
             <UpdateModal
               developer={developer}
               setDeveloper={setDeveloper}

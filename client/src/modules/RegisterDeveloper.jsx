@@ -160,7 +160,7 @@ function RegisterDeveloper() {
     }
   };
 
-  const steps = ['Login Details', 'Personal Details'];
+  const steps = ['Login Details', 'Personal Details','Review'];
 
   const displayStep = (step) => {
     switch (step) {
@@ -180,6 +180,15 @@ function RegisterDeveloper() {
             setFormData={setFormData}
             validationErrors={validationErrors}
             updateFormValue={updateFormValue}
+          />
+        );
+        case 3:
+        return (
+          <Final
+            formData={formData}
+            setFormData={setFormData}
+            image={image}
+            setImage={setImage}
           />
         );
       default:

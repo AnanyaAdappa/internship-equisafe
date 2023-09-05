@@ -189,9 +189,9 @@ function RegisterOrganization() {
             toast.success(`${data.message}`, {
               position: toast.POSITION.TOP_CENTER, autoClose: 2000,
             });
-            navigate("/");
+            // navigate("/");
             // alert(`${data.message}`);
-            window.location.reload();
+            // window.location.reload();
           }
           return 0;
         })

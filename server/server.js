@@ -14,7 +14,12 @@ const app = express();
 
 // Loads .env file contents into process.env
 dotenv.config();
-
+console.log({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+  secure: true,
+})
 // cloudinary config
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,

@@ -228,7 +228,7 @@ function UpdateModal({ developer, fetchProfile }) {
               />
             </div> */}
             {/* ----------------Image Update-------------- */}
-            {/* <div className="relative">
+            <div className="relative">
               <div className="flex w-full justify-center">
                 <div className="box-decoration w-full py-6">
                   <label
@@ -272,7 +272,7 @@ function UpdateModal({ developer, fetchProfile }) {
                 </div>
               </div>
 
-            </div> */}
+            </div>
             {/* <div className="relative">
               <p
                 className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600

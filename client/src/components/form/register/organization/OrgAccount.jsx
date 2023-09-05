@@ -13,7 +13,7 @@ function OrgAccount({
           Company Name*
         </p>
         <input
-          placeholder="Eg. Raw Engineering "
+          placeholder="Eg. LIC "
           type="text"
           required
           value={formData.name}

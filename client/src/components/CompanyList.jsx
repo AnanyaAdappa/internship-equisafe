@@ -50,12 +50,12 @@ const CompanyList = ({ organizationsProp = [] }) => {
               </div>
               <div className="flex my-5">
                 <div className="flex flex-col w-1/2 items-start justify-start gap-3">
-                  <div>
+                  {/* <div>
                     <h3 className="listing-content-data">Domain</h3>
                     <h4 className="listing-content-constant company-domain">
                       {domain}
                     </h4>
-                  </div>
+                  </div> */}
                   <div>
                     <h3 className="listing-content-data">Website</h3>
                     <button onClick={() => window.location.assign(website)} type="button" className="link link-hover company-website">{website}</button>
@@ -63,10 +63,10 @@ const CompanyList = ({ organizationsProp = [] }) => {
                 </div>
                 <div className="flex flex-col w-1/2 items-start justify-start gap-3">
                   {/* ---------TODO: Founded in ---------------*/}
-                  <div>
+                  {/* <div>
                     <h3 className="listing-content-data">Total Projects</h3>
                     <h4 className="listing-content-constant">{org_projects.length}</h4>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
