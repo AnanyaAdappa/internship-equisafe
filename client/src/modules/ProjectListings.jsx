@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import ProjectList from "../components/ProjectList";
 import FilterButton from "../components/navbar/FilterButton";
 // import loading from "../../../../../../../../SVG/loading.svg";
@@ -38,7 +38,7 @@ function ProjectListings() {
   const [saveBtnState, SetsaveBtnState] = useState(false);
   const [bestMatchesBtnState, setBestMatchesBtnState] = useState(true);
   const authToken = localStorage.getItem("authToken");
-
+  console.log(projects, "PROJECTS");
   const progressState = useContext(loadingContext);
   const { setProgress } = progressState;
 
@@ -46,7 +46,7 @@ function ProjectListings() {
     const searchTitle = `?title=${searchInput.searchString}`;
     const response = await fetch(
       `${import.meta.env.VITE_API_URL}/projects${searchTitle}`,
-      { mode: "cors" },
+      { mode: "cors" }
     );
     const fetchedProjects = await response.json();
     setProjects(fetchedProjects.data);
@@ -67,8 +67,10 @@ function ProjectListings() {
     await setProgress(10);
 
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/projects?bookmark=${localStorage.getItem("isDev")}`,
-      { mode: "cors" },
+      `${import.meta.env.VITE_API_URL}/projects?bookmark=${localStorage.getItem(
+        "isDev"
+      )}`,
+      { mode: "cors" }
     );
     await setProgress(30);
     const fetchedProjects = await response.json();
@@ -76,7 +78,8 @@ function ProjectListings() {
     await setProgress(50);
     // alert(`${fetchedProjects.message}`);
     toast.success(`${fetchedProjects.message}`, {
-      position: toast.POSITION.TOP_CENTER, autoClose: 2000,
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
     });
     await setProgress(1000);
   };
@@ -90,7 +93,8 @@ function ProjectListings() {
 
     await setProgress(30);
     toast.success(`${message}`, {
-      position: toast.POSITION.TOP_CENTER, autoClose: 2000,
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
     });
     await setProgress(50);
     SetsaveBtnState(false);
@@ -111,10 +115,10 @@ function ProjectListings() {
 
       <div className="gap-0 z-[1] mt-5">
         <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
-         Uncover Your Perfect Coverage
+          Uncover Your Perfect Coverage
         </h1>
         <h1 className=" blue-gradient text-center text-3xl md:text-4xl  font-semibold">
-        Your Roadmap to Finding the Best Insurance Policies
+          Your Roadmap to Finding the Best Insurance Policies
         </h1>
 
         {/* ----------------Show Only for Organizations------------ */}
@@ -140,12 +144,24 @@ function ProjectListings() {
           </h1>
           <div className="flex mt-6 w-full justify-between border-b ">
             <div className="tabs gap-4 pl-6">
-              <button type="button" className={`tab ${bestMatchesBtnState ? "tab-bordered tab-active" : ""}`} onClick={handleBestMatches}>
+              <button
+                type="button"
+                className={`tab ${
+                  bestMatchesBtnState ? "tab-bordered tab-active" : ""
+                }`}
+                onClick={handleBestMatches}
+              >
                 Best Matches
               </button>
               {localStorage.getItem("isDev") ? (
-                <button type="button" className={`tab ${saveBtnState ? "tab-bordered tab-active" : ""}`} onClick={handleSaved}>
-                  Saved 
+                <button
+                  type="button"
+                  className={`tab ${
+                    saveBtnState ? "tab-bordered tab-active" : ""
+                  }`}
+                  onClick={handleSaved}
+                >
+                  Saved
                 </button>
               ) : null}
             </div>
@@ -161,7 +177,8 @@ function ProjectListings() {
           </div>
 
           <p className="mx-5 my-2 text-base">
-          Explore Protection, Discover Peace of Mind: Navigating the World of Insurance Policies.
+            Explore Protection, Discover Peace of Mind: Navigating the World of
+            Insurance Policies.
           </p>
           <div className="flex w-full px-4 py-2">
             <Search
@@ -180,9 +197,9 @@ function ProjectListings() {
             </div>
           )}
           {!authToken && projects.length > 0 ? (
-            <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold ml-5">
+            <h3 className=" blue-gradient text-center text-2xl md:text-4xl font-semibold ml-5">
               Please login to see more...
-            </h1>
+            </h3>
           ) : null}
         </div>
       </div>

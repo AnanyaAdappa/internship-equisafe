@@ -119,26 +119,26 @@ router.route("/auth/register")
 
       const securedDeveloper = { ...developer, password: securedPassword };
 
-      // if (file) {
-      //   // A promise was needed to handle the errors and process the result using then blocks so promisified the cloudinary method as it is not a promise by default.
-      //   const cloudinaryUpload = promisify(cloudinary.uploader.upload);
-      //   return cloudinaryUpload(file.tempFilePath)
-      //     .then((result) => {
-      //       securedDeveloper.profile_pic = result.url;
-      //       // return Developer.create(developer);
-      //       // shifting the common logic code to controller.
-      //       controller.registerDeveloper(res, next, securedDeveloper, file);
-      //     })
-      //     .catch((error) => {
-      //       // *** this if condition is for cloudinaryUpload(file.tempFilePath) promise as it returns error in object form with key `http_code` over here so handling it accordingly for that specific argument of tempFilePath
-      //       // a typo in `tempFilePath` spelling will trigger satisfy this `if` block.
-      //       if (error.http_code) {
-      //         next(new ApiError(422, "Error creating developer!!", JSON.stringify(error)));
-      //       } else { // this error block is for handling errors of the then block to handle any error occured before passing the execution to the controller.
-      //         next(new ApiError(422, "Error creating developer!", error.toString()));
-      //       }
-      //     });
-      // }
+      if (file) {
+        // A promise was needed to handle the errors and process the result using then blocks so promisified the cloudinary method as it is not a promise by default.
+        const cloudinaryUpload = promisify(cloudinary.uploader.upload);
+        return cloudinaryUpload(file.tempFilePath)
+          .then((result) => {
+            securedDeveloper.profile_pic = result.url;
+            // return Developer.create(developer);
+            // shifting the common logic code to controller.
+            controller.registerDeveloper(res, next, securedDeveloper, file);
+          })
+          .catch((error) => {
+            // *** this if condition is for cloudinaryUpload(file.tempFilePath) promise as it returns error in object form with key `http_code` over here so handling it accordingly for that specific argument of tempFilePath
+            // a typo in `tempFilePath` spelling will trigger satisfy this `if` block.
+            if (error.http_code) {
+              next(new ApiError(422, "Error creating developer!!", JSON.stringify(error)));
+            } else { // this error block is for handling errors of the then block to handle any error occured before passing the execution to the controller.
+              next(new ApiError(422, "Error creating developer!", error.toString()));
+            }
+          });
+      }
       // if the file is not sent in request then do normal operations
       return controller.registerDeveloper(res, next, securedDeveloper, file);
     } catch (error) {

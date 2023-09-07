@@ -249,15 +249,15 @@ function CompanyDetails({
         />
         )}
 
-        <div
+        {/* <div
           className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
             items-center border z-10 relative
            border-slate-300  bg-white/50 rounded-2xl my-6 mb-10"
         >
           <div className="flex w-full flex-col">
-            <h1 className="text-2xl font-semibold px-5 pt-7 mb-3">Company Projects</h1>
+            <h1 className="text-2xl font-semibold px-5 pt-7 mb-3">Company Projects</h1> */}
             {/* ---------TODO: Comapny Projects------------ */}
-            <div className=" py-5">
+            {/* <div className=" py-5">
               {org_data.org_projects && org_data.org_projects.map((project) => (
                 <div className="flex w-full justify-between items-center py-5 relative border-t px-5 gap-5 border-slate-300" key={project.uid}>
                   <div className="flex flex-col md:flex-row gap-6 md:gap-0">
@@ -274,18 +274,18 @@ function CompanyDetails({
                     </div>
                     <div className="lg:w-[60%] md:pl-6">
                       <Link to={`/projects/${project.uid}`} className="hidden md:flex text-xl font-semibold  hover:text-accent">{project.title}</Link>
-                      <div className="hidden md:flex place-content-start items-center w-full text-slate-600 gap-1">
+                      <div className="hidden md:flex place-content-start items-center w-full text-slate-600 gap-1"> */}
                         {/* ------------------------ Project Description-------------------------- */}
-                        <p>{project.uid}</p>
+                        {/* <p>{project.uid}</p>
                       </div>
                       <p className="description mb-4  w-full md:w-[90%]">
                         {project.description}
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                   {/* -------Delete Button------- */}
 
-                  <div className="absolute top-6 right-3 md:flex">
+                  {/* <div className="absolute top-6 right-3 md:flex">
                     {localStorage.getItem("isOrg")
                     && (
                       <button
@@ -303,7 +303,7 @@ function CompanyDetails({
             </div>
           </div>
 
-        </div>
+        </div> */}
         {/* ----------Company Reviews------------ */}
         <div
           className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center

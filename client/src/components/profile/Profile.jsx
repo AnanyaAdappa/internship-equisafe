@@ -286,7 +286,7 @@ export default function Profile() {
         </div>
         {/* ---------------Proposals---------------- */}
         {/* ---------!Make this div Visible only if dev has applied for proposals-------------- */}
-        <div
+        {/* <div
           className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
             items-center border z-10 relative
            border-slate-300 bg-white/50 rounded-2xl my-6 mb-10"
@@ -295,7 +295,7 @@ export default function Profile() {
             Your Project Proposals
           </h1>
           <div className="flex w-full flex-col pt-2">
-            {/* <div className="w-full border -mb-[1px] border-b border-white z-10" /> */}
+            
             {proposals.length === 0 && (
             <h3 className="text-lg lg:text-xl ms-5 font-semibold mb-3 text-slate-800">
               No proposals found.
@@ -314,7 +314,7 @@ export default function Profile() {
                 />
 
                 <div className="flex flex-col items-start pl-7  justify-start w-full text-slate-600">
-                  {/* ------------------------ Proposal title-------------------------- */}
+                 
                   <Link to={`/projects/${proposal.project.uid}`} className="text-lg lg:text-2xl font-semibold mb-3 text-slate-800">
                     {proposal.project.title}
                   </Link>
@@ -324,18 +324,18 @@ export default function Profile() {
                   <p className="text-sm lg:text-lg font-normal text-slate-600 mb-2">
                     {proposal.organization.uid}
                   </p>
-                  {/* badge for proposal status */}
+                
                   <span
-                    // eslint-disable-next-line no-nested-ternary
+                   
                     className={`border  px-2 py-1 bg-accent/5 text-sm rounded-2xl text-accent ${proposal.pending ? "bg-yellow-100 text-orange-600 border-orange-300" : proposal.accepted ? "bg-green-100 text-green-800 border-green-300" : "bg-red-100 text-red-800 border-red-300"}`}
                   >
-                    {/* {proposal.pending ? "Pending" : "Accepted"} */}
+                    
                     {getStatusText(proposal)}
                   </span>
 
                 </div>
-                {/* -------Delete Button------- */}
-                {/* render ConfirmationDialog only if selectedUID && deleteBtn are available */}
+               
+               
                 {selectedUID && deleteBtn && (
                   <ConfirmationDialog
                     cancel={() => setDeleteBtn(!deleteBtn)}
@@ -380,21 +380,21 @@ export default function Profile() {
 
             ))}
           </div>
-        </div>
+        </div> */}
         {/* ----------Project History----------- */}
-        <div
+        {/* <div
           className="flex w-full lg:w-3/5 md:w-4/5 flex-col justify-center
             items-center border z-10 relative
            border-slate-300  bg-white/50 rounded-2xl my-6 mb-10"
-        >
-          <div className="flex flex-col  pt-7 relative w-full">
-            <h1 className="text-2xl px-5 font-semibold mb-6">Project History</h1>
-            <div className={` absolute px-5 -top-3 -right-5 md:right-0  md:top-0 `}>
+        > */}
+          {/* <div className="flex flex-col  pt-7 relative w-full">
+            <h1 className="text-2xl px-5 font-semibold mb-6">Project History</h1> */}
+            {/* <div className={` absolute px-5 -top-3 -right-5 md:right-0  md:top-0 `}>
               <ProjectHistoryAdd fetchHistory={fetchHistory} />
-            </div>
+            </div> */}
 
             {/* ---------TODO: Project History------------ */}
-            {projectHistory.length === 0 && (
+            {/* {projectHistory.length === 0 && (
             <h2 className="text-xl px-5 py-5">
               No projects in your Project History. Please add some projects
             </h2>
@@ -402,14 +402,14 @@ export default function Profile() {
             )}
             {projectHistory.length > 0 && projectHistory.map((project) => (
               <div key={project.uid} className="flex flex-row justify-between border-t px-5 py-5 border-slate-300 relative">
-                <div>
+                <div> */}
 
                   {/* ------------------------ Project title-------------------------- */}
-                  <h2 className="text-xl font-semibold mb-2">
+                  {/* <h2 className="text-xl font-semibold mb-2">
                     {project.title}
-                  </h2>
+                  </h2> */}
                   {/* ------------------------ Project timeline-------------------------- */}
-                  <div className="flex place-content-start items-center w-[200%] text-slate-600 gap-1">
+                  {/* <div className="flex place-content-start items-center w-[200%] text-slate-600 gap-1">
                     <p className="flex  w-[56%] mb-3">
                       <BsFillCalendarEventFill className="mr-[5%]" />
                       {project.startDate}
@@ -429,10 +429,10 @@ export default function Profile() {
                     {project.description}
                   </p>
                 </div>
-                <div>
+                <div> */}
                   {/* -------Delete Button------- */}
                   {/* render ConfirmationDialog only if selectedUID && deleteBtn are available */}
-                  {selectedUID && deleteBtn && (
+                  {/* {selectedUID && deleteBtn && (
 
                     <ConfirmationDialog
                       cancel={() => setDeleteBtn(!deleteBtn)}
@@ -455,9 +455,9 @@ export default function Profile() {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
+            ))} */}
+          {/* </div> */}
+        {/* </div> */}
       </div>
     );
   }

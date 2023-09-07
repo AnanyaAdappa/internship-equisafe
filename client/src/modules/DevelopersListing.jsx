@@ -53,11 +53,11 @@ function DevelopersListing() {
 
       <div className="gap-0 z-[1] mt-5">
         <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
-          Discover Best People to Hire!
+          Discover Users!
         </h1>
-        <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold">
+        {/* <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold">
           Developer reviews. Rates. Interviews.
-        </h1>
+        </h1> */}
       </div>
       <div className="flex justify-center my-6 relative mx-3">
         <div className="flex lg:w-3/5 flex-col justify-center w-full md:w-4/5 items-start border z-10 border-slate-300  bg-white/50 rounded-2xl py-5">
@@ -91,9 +91,9 @@ function DevelopersListing() {
             </div>
           )}
           {!authToken && developers.length > 0 ? (
-            <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold ml-5">
+            <h3 className=" blue-gradient text-center text-2xl md:text-4xl font-semibold ml-5">
               Please login to see more...
-            </h1>
+            </h3>
           ) : null}
         </div>
       </div>

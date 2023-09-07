@@ -32,7 +32,7 @@ function ProfilePicDev({
           <div
             role="button"
             tabIndex={0}
-        //   onClick={handleClick}
+          // onClick={handleClick}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 handleClick();

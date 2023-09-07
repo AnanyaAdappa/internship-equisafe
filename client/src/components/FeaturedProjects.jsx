@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // import { RiArrowRightSLine } from 'react-icons/ri';
 
 function FeaturedProjects() {
@@ -9,14 +9,14 @@ function FeaturedProjects() {
     const fetchProjects = async () => {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/projects?featured=true`,
-        { mode: 'cors' },
+        { mode: "cors" }
       );
       const fetchedProjects = await response.json();
       setProjects(fetchedProjects.data);
     };
     fetchProjects();
   }, []);
-
+  
   return (
     <div className="flex flex-col max-w-7xl">
       {/* <div className="flex flex-col">

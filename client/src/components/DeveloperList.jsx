@@ -60,22 +60,22 @@ const DeveloperList = ({ developersProp = [] }) => {
               <AiFillStar />
             </div>
             <div className="flex my-5">
-              <div className="flex flex-col w-1/2 items-start justify-start gap-3">
-                {/* ---------Profession------------- */}
+              {/* <div className="flex flex-col w-1/2 items-start justify-start gap-3">
+                ---------Profession-------------
                 <div>
                   <h3 className="listing-content-data">Domain</h3>
                   <h4 className="listing-content-constant description">
                     {technical_role}
                   </h4>
                 </div>
-                {/* --------Education------------ */}
+                --------Education------------
                 <div>
                   <h3 className="listing-content-data">Education</h3>
                   <h4 className="link link-hover company-website">
                     {qualification}
                   </h4>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex flex-col w-1/2 items-start justify-start gap-3">
                 {/* -----------TODO: Experience------------ */}
