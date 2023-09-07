@@ -11,7 +11,10 @@ const secret = process.env.JWT_SECRET;
 const isDeveloperAuthenticated = (req, res, next) => {
   if (req.headers.authorization) {
     // also checking if the value of access token is right or not.
-    const verification = jwt.verify(req.headers.authorization, secret);
+    const verification = jwt.verify(
+      req.headers.authorization.split(" ")[1],
+      secret
+    );
 
     // the following should be used for testing as weirdly jwt.verify() was return 2 different kind of objects
     // return Developer.findOne({ email: verification })

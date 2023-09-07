@@ -40,13 +40,13 @@ const ProjectList = ({ projectsProp = [] }) => {
         >
           <div className="flex flex-col lg:flex-row w-full gap-6 items-center relative">
             <BsFillBookmarkPlusFill className="text-white lg:text-accent absolute w-7 h-7 top-2 border-spacing-4 right-3 z-30 hover:text-accent/30 drop-shadow-xl drop-shadow-white" />
-            {/* <img
+            <img
               src={thumbnail}
               className="flex place-content-start items-start w-full aspect-video  h-48 object-cover rounded-lg"
               alt={title}
-            /> */}
+            />
 
-            <img src="policyinsurance.jpg" alt="" className="flex place-content-start items-start  aspect-video  h-48 object-cover rounded-lg" />
+            {/* <img src="policyinsurance.jpg" alt="" className="flex place-content-start items-start  aspect-video  h-48 object-cover rounded-lg" /> */}
             <div className="flex flex-col w-full">
               {/* ------------ title------------- */}
               <h1 className="text-xl font-medium text-slate-900">{title}</h1>

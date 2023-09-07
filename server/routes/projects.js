@@ -101,6 +101,7 @@ router
     const project = req.body;
     const file = req.files ? req.files.photo : null;
     console.log(project, "project");
+    console.log(file,"file");
     try {
       if (file) {
         // A promise was needed to handle the errors and process the result using then blocks so promisified the cloudinary method as it is not a promise by default.
