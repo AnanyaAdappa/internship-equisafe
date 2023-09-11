@@ -10,7 +10,6 @@ function Home() {
       <div className="flex flex-col w-full justify-center">
         <Hero />
         <Featured />
-        {/* <AboutSection /> */}
       </div>
       <Footer />
     </>

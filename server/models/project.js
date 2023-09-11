@@ -50,12 +50,7 @@ const projectSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "organizations",
     },
-    hourly_rate: {
-      type: Number,
-    },
-    fixed_price: {
-      type: Number,
-    },
+   
     // sending multiple references in an array for onne to many relation kinda thing.
     reviews: [{
       type: mongoose.Schema.Types.ObjectId,
@@ -70,9 +65,7 @@ const projectSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "developers",
     }],
-    project_type: { // one-time/monthly/yearly
-      type: String,
-    },
+    
     required_personnel: { // like entry-level/exprerienced
       type: String,
     },
@@ -80,10 +73,7 @@ const projectSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "developers",
     }],
-    open: { // open for development ?
-      type: Boolean,
-      default: true,
-    },
+   
   },
   {
     timestamps: true, // to create created_at & updated_at fields

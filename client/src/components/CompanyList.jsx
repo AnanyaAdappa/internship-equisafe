@@ -20,9 +20,7 @@ const CompanyList = ({ organizationsProp = [] }) => {
       name,
       about,
       website,
-      domain,
       banner_img,
-      org_projects,
     } = organization;
     return (
       <React.Fragment key={uid}>

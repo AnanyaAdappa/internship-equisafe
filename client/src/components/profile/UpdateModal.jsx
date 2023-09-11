@@ -19,13 +19,7 @@ function UpdateModal({ developer, fetchProfile }) {
     hiddenFileInput.current.click();
   };
 
-  // const handleSkills = (event) => {
-  //   const { name, value } = event.target;
-  //   setLocalDev({
-  //     ...localDev,
-  //     [name]: name === "skills" ? value.split(", ") : value,
-  //   });
-  // };
+  
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -48,33 +42,11 @@ function UpdateModal({ developer, fetchProfile }) {
     bodyData.append("lname", localDev.lname);
     bodyData.append("email", localDev.email);
     bodyData.append("phone", localDev.phone);
-    // if (localDev.qualification) {
-    //   bodyData.append('qualification', localDev.qualification);
-    // }
-    // if (localDev.skills) {
-
-    //   localDev.skills.forEach((skill) => {
-    //     bodyData.append('skills', skill);
-    //   });
-    // }
+    
     if (localDev.city) {
       bodyData.append("city", localDev.city);
     }
-    // if (localDev.technical_role) {
-    //   bodyData.append('technical_role', localDev.technical_role);
-    // }
-    // if (localDev.openToWork) {
-    //   bodyData.append('openToWork', localDev.openToWork);
-    // }
-    // if (localDev.linkedin) {
-    //   bodyData.append('linkedin', localDev.linkedin);
-    // }
-    // if (localDev.github) {
-    //   bodyData.append('github', localDev.github);
-    // }
-    // if (localDev.about) {
-    //   bodyData.append('about', localDev.about);
-    // }
+    
     if (localDev.photo) {
       bodyData.append("photo", localDev.photo);
     }

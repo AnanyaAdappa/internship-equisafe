@@ -1,4 +1,4 @@
-/* eslint-disable camelcase */
+
 import React from "react";
 import { BsFillBookmarkPlusFill } from "react-icons/bs";
 import { Link } from "react-router-dom";

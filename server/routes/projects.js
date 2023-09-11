@@ -16,7 +16,7 @@ router
     // Project.find()
     // Project.find({ title: "Raw" })
     // Project.find(req.query)
-    console.log("HIIII");
+  
     // this queryObject is beneficial when some wrong query which is not intended is used in the URL
     const queryObject = {};
 

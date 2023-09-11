@@ -26,14 +26,7 @@ function RegisterDeveloper() {
     password: '',
     phone: '',
     city: '',
-    technical_role: '',
-    qualification: '',
-    skills: "",
     photo: null,
-    openToWork: false,
-    linkedin: "",
-    github: "",
-    about: "",
   });
   const [validationErrors, setValidationErrors] = useState({
     fname: '',
@@ -42,14 +35,7 @@ function RegisterDeveloper() {
     password: '',
     phone: '',
     city: '',
-    technical_role: '',
-    qualification: '',
-    skills: "",
     photo: null,
-    openToWork: false,
-    linkedin: "",
-    github: "",
-    about: "",
   });
   const validateFname = (name) => {
     if (name.length === 0) {
@@ -152,13 +138,6 @@ function RegisterDeveloper() {
     } else if (field === "phone") {
       validatePhone(value);
     }
-    //  else if (field === "skills") {
-    //   validateSkills(value);
-    // } else if (field === "linkedin") {
-    //   validateLinkedin(value);
-    // } else if (field === "github") {
-    //   validateGithub(value);
-    // }
   };
 
   const steps = ['Login Details', 'Personal Details','Review'];
@@ -255,21 +234,7 @@ function RegisterDeveloper() {
       if (formData.city) {
         bodyData.append('city', formData.city);
       }
-      // if (formData.technical_role) {
-      //   bodyData.append('technical_role', formData.technical_role);
-      // }
-      // if (formData.openToWork) {
-      //   bodyData.append('openToWork', formData.openToWork);
-      // }
-      // if (formData.linkedin) {
-      //   bodyData.append('linkedin', formData.linkedin);
-      // }
-      // if (formData.github) {
-      //   bodyData.append('github', formData.github);
-      // }
-      // if (formData.about) {
-      //   bodyData.append('about', formData.about);
-      // }
+     
       if (formData.photo) {
         bodyData.append('photo', formData.photo);
       }

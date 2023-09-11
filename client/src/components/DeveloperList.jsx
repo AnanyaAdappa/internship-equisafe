@@ -70,20 +70,6 @@ const DeveloperList = ({ developersProp = [] }) => {
 
         {/* ------------TODO:  Description ------------- */}
         <p className="description">{about}</p>
-
-        {/* -------------Skill---------------- */}
-        {/* <div className="flex flex-wrap">
-          <ul className="flex flex-wrap  gap-2 capitalize text-accent">
-            {skills.map((skill, index) => (
-              <li
-                key={index}
-                className="border border-slate-300 px-2 py-1 bg-accent/5 text-sm rounded-2xl"
-              >
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </div> */}
       </Link>
     );
   });

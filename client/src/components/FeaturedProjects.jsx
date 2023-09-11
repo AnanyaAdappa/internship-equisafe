@@ -38,7 +38,7 @@ function FeaturedProjects() {
               <h2 className="font-semibold text-xl ">{project.title}</h2>
 
               {/* ------------- Project organization ------------ */}
-              {/* <h2 className='font-light text-xl text-slate-200 '>Google</h2> */}
+             
             </div>
             <div className="flex">
               {/* ------------- Project tech stack ------------ */}
