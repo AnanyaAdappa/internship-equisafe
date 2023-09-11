@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import LoginContainer from './LoginContainer';
 import 'react-toastify/dist/ReactToastify.min.css';
-// import developer from "../../../../../../../../../../developer.svg";
 import developer from '../../../../public/developer.svg';
 
 export default function DevLogin() {
@@ -76,7 +75,7 @@ export default function DevLogin() {
           });
         }
         if (data.data.access_token) {
-          // console.log("token is ", data.data.access_token);
+         
           localStorage.setItem('authToken', data.data.access_token);
           localStorage.setItem('isDev', data.data.developer._id);
           localStorage.setItem('dev_uid', data.data.developer.uid);
@@ -84,18 +83,17 @@ export default function DevLogin() {
             render: "Login Successful", type: "success", isLoading: false, autoClose: 2000,
           });
           navigate('/');
-          // alert(`${data.message}`);
+         
 
           window.location.reload();
         }
-        // console.log("LOGGED IN --> ", data);
-        // console.log("DEV --> ", localStorage.getItem('isDev'));
+       
 
         // return is so that the function returns something and stays consistent with above return of if block
         return 0;
       })
       .catch((error) => {
-        // console.log('POSTING error --> ', error.message);
+       
         toast.update(id, {
           render: `${error.message}`, type: "error", isLoading: false, autoClose: 2000,
         });

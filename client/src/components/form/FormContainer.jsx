@@ -1,3 +1,4 @@
+//sign up
 function FormContainer({ children, image }) {
   return (
     <div className="bg-white relative lg:pt-14 h-full">
@@ -8,11 +9,6 @@ function FormContainer({ children, image }) {
         <div className="flex flex-col items-center w-full pt-5 md:px-10  lg:pt-1 lg:flex-row">
           <div className="hidden md:flex w-full h-full bg-cover relative max-w-md lg:max-w-2xl lg:w-1/2">
             <div className="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
-              {/* <img
-                alt="form"
-                src={image}
-                className="flex w-4/5 object-cover h-auto p-0"
-              /> */}
 
               <img src="/signup.jpg" alt="" className="" />
             </div>

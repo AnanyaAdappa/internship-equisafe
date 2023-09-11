@@ -16,11 +16,11 @@ function ProjectHistoryAdd({ fetchHistory }) {
     endDate: "",
     developer: devID,
   });
-  // console.log("FromData : ", formData);
+ 
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.keyCode === 27) { // Escape key
+      if (event.keyCode === 27) {
         setShowModal(false);
       }
     };
@@ -33,7 +33,7 @@ function ProjectHistoryAdd({ fetchHistory }) {
   }, []);
 
   const postProject = async () => {
-    // always start the loader with 0
+   
     await setProgress(0);
     await setProgress(10);
     try {
@@ -50,12 +50,12 @@ function ProjectHistoryAdd({ fetchHistory }) {
         .then(async (data) => {
           await setProgress(40);
           if (data.error) {
-            // alerts_toast
+           
             await setProgress(100);
             return toast.error(`${data.message} - ${data.error}`, {
               position: toast.POSITION.TOP_CENTER, autoClose: 10000,
             });
-          // alert(`${data.message} : ${data.error}`);
+         
           }
           fetchHistory();
           await setProgress(60);
@@ -63,13 +63,7 @@ function ProjectHistoryAdd({ fetchHistory }) {
             position: toast.POSITION.TOP_CENTER, autoClose: 2000,
           });
           await setProgress(80);
-          // setFormData({
-          //   title: "",
-          //   link: "",
-          //   description: "",
-          //   startDate: "",
-          //   endDate: "",
-          // });
+          
           await setProgress(100);
           return 0;
         })
@@ -87,26 +81,20 @@ function ProjectHistoryAdd({ fetchHistory }) {
     }
   };
 
-  // const handleModalClose = () => {
-  //   const modal = document.getElementById("my_modal_2");
-  //   if (modal) {
-  //     modal.close();
-  //   }
-  // };
+  
 
   const handleSubmit = () => {
     const requiredFields = ['title', 'description', 'startDate', 'endDate'];
 
-    // return those fields from formData which are empty.
+    
     const emptyFields = requiredFields.filter((field) => !formData[field]);
 
     if (emptyFields.length > 0) {
-      // map through each item and make a new array
+     
       const emptyFieldNames = emptyFields.map((field) => field.charAt(0).toUpperCase() + field.slice(1));
 
       const errorMessage = `Please fill in the following required fields: ${emptyFieldNames.join(', ')}`;
-      // alert(errorMessage);
-      // setShowModal(!showModal);
+      
       toast.error(`${errorMessage}`, {
         position: toast.POSITION.TOP_CENTER, autoClose: 10000,
       });
@@ -117,11 +105,11 @@ function ProjectHistoryAdd({ fetchHistory }) {
     postProject();
     setShowModal(!showModal);
 
-    // handleModalClose();
+    
   };
   return (
     <>
-      {/* Open the modal using ID.showModal() method */}
+   
       <button
         type="button"
         onClick={() => setShowModal(!showModal)}
@@ -141,7 +129,7 @@ function ProjectHistoryAdd({ fetchHistory }) {
               Add your Project in History
             </h1>
             <div className="w-full my-6 mr-0 ml-0 relative space-y-8 h-[60vh] overflow-y-scroll scroll-smooth z-10 scrollbar px-3">
-              {/* ------Project title--------- */}
+              
               <div className="relative w-full pt-3">
                 <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                   Project title*
@@ -157,7 +145,7 @@ function ProjectHistoryAdd({ fetchHistory }) {
                   className="border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
                 />
               </div>
-              {/* ------Project Link--------- */}
+            
               <div className="relative">
                 <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                   Demo link
@@ -172,7 +160,7 @@ function ProjectHistoryAdd({ fetchHistory }) {
                   border-gray-300 rounded-md"
                 />
               </div>
-              {/* ------Project description--------- */}
+              
               <div className="relative">
                 <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                   Description*
@@ -190,7 +178,7 @@ function ProjectHistoryAdd({ fetchHistory }) {
                   border-gray-300 rounded-md"
                 />
               </div>
-              {/* ------------date---------- */}
+              
               <div className="flex w-full items-center justify-between relative z-[100]">
                 <div className="relative w-[49%]">
                   <p className="bg-white pt-0  pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">

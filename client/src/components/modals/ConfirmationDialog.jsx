@@ -12,11 +12,8 @@ function ConfirmationDialog({
   const { setProgress } = progressState;
 
   const requestDelete = async (uid) => {
-    // always start the loader with 0
     await setProgress(0);
     await setProgress(20);
-    // giving 2 functionalities to same component
-    // so checking here if the incoming uid is of history projects
     if (uid.startsWith("hist")) {
       await setProgress(40);
       await fetch(`${import.meta.env.VITE_API_URL}/project-histories/${uid}`, {

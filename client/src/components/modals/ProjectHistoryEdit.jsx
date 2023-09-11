@@ -16,11 +16,11 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
     developer: localStorage.getItem("isDev"),
   });
 
-  // modal
+ 
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.keyCode === 27) { // Escape key
+      if (event.keyCode === 27) { 
         setShowModal(false);
       }
     };
@@ -33,7 +33,7 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
   }, []);
 
   const updateProject = async (uid) => {
-    // always start the loader with 0
+    
     await setProgress(0);
     await setProgress(10);
     try {
@@ -60,7 +60,7 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
             position: toast.POSITION.TOP_CENTER, autoClose: 2000,
           });
           await setProgress(80);
-          // alert(data.message);
+          
           fetchHistory();
           await setProgress(100);
           return 0;
@@ -84,7 +84,7 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
   };
 
   const fetchProject = async (uid) => {
-    // always start the loader with 0
+   
     await setProgress(0);
     await setProgress(20);
     fetch(`${import.meta.env.VITE_API_URL}/project-histories/${uid}`, {
@@ -113,7 +113,7 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
   };
   return (
     <>
-      {/* Open the modal using ID.showModal() method */}
+    
       <button
         type="button"
         onClick={() => handleEdit(projectUID)}
@@ -127,14 +127,14 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
 
         >
           <form
-            // method="dialog"
+           
             className="w-[90%] max-w-2xl z-[100] modal-box bg-white rounded-2xl py-10 px-2 md:p-10 relative"
           >
             <h1 className="flex items-center justify-center text-2xl font-semibold border-b pb-4 text-slate-800">
               Update Project
             </h1>
             <div className="w-full my-6 mr-0 ml-0 relative space-y-8 h-[60vh] overflow-y-scroll scroll-smooth z-10 scrollbar px-3">
-              {/* ------Project title--------- */}
+             
               <div className="relative w-ful pt-3">
                 <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                   Project title
@@ -150,7 +150,7 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
                   className="border placeholder-gray-400 focus:outline-none focus:border-accent w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white border-gray-300 rounded-md"
                 />
               </div>
-              {/* ------Project Link--------- */}
+             
               <div className="relative">
                 <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                   Demo link
@@ -165,7 +165,7 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
                   border-gray-300 rounded-md"
                 />
               </div>
-              {/* ------Project description--------- */}
+              
               <div className="relative">
                 <p className="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
                   Description
@@ -182,7 +182,7 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
                   border-gray-300 rounded-md"
                 />
               </div>
-              {/* ------------date---------- */}
+              
               <div className="flex w-full items-center justify-between relative z-[100]">
                 <div className="relative w-[49%]">
                   <p className="bg-white pt-0  pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
@@ -224,7 +224,7 @@ function ProjectHistoryEdit({ fetchHistory, projectUID }) {
               Update
             </button>
           </form>
-          {/* for background click closing */}
+         
           <form method="dialog">
             <button
               type="button"

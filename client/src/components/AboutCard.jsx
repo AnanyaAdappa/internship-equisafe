@@ -16,21 +16,21 @@ export default function AboutCard(props) {
         alt={props.name}
         className="rounded-3xl max-w-md w-[80%]"
       />
-      <div className="flex items-center flex-col">
+      {/* <div className="flex items-center flex-col">
         <h2 className="text-center capitalize font-medium blue-gradient text-3xl drop-shadow font-sans shadow-accent">
           {props.name}
         </h2>
         <p className="text-xl capitalize text-slate-800 font-medium">
           Fullstack Developer
         </p>
-      </div>
+      </div> */}
       <div className="flex flex-grow justify-around w-[60%] text-accent text-2xl">
-        <Link to={`https://github.com/${props.github}`} target="_blank">
+        {/* <Link to={`https://github.com/${props.github}`} target="_blank">
           <AiFillGithub className="hover:text-blue-600 " />
-        </Link>
-        <Link to={`https://www.linkedin.com/in/${props.linkedin}`} target="_blank">
+        </Link> */}
+        {/* <Link to={`https://www.linkedin.com/in/${props.linkedin}`} target="_blank">
           <AiFillLinkedin className="hover:text-blue-600 " />
-        </Link>
+        </Link> */}
         <Link to={`mailto:${props.email}`}>
           <MdEmail className="hover:text-blue-600 " />
         </Link>

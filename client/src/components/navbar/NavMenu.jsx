@@ -14,10 +14,6 @@ const navigations = [
     name: "COMPANIES",
     path: "/companies",
   },
-  // {
-  //   name: "Developer",
-  //   path: "/developers",
-  // },
 ];
 
 export default function NavMenu() {

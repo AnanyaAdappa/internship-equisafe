@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import DeveloperList from "../components/DeveloperList";
 import FilterButton from "../components/navbar/FilterButton";
-// import loading from '/SVG/loading.svg';
 import loading from "../../public/SVG/loading.svg";
 import Search from "../components/navbar/Search";
 
@@ -35,12 +34,10 @@ function DevelopersListing() {
       const searchName = `?fname=${searchInput.searchString}`;
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/developers${searchName}`,
-        { mode: "cors" },
+        { mode: "cors" }
       );
       const fetchedDevelopers = await response.json();
       setDevelopers(fetchedDevelopers.data);
-      // console.log('fetch Developers------------', fetchedDevelopers.data);
-      // console.log('fetch Developers------------', developers);
     };
     fetchDevelopers();
   }, [searchInput]);
@@ -55,9 +52,6 @@ function DevelopersListing() {
         <h1 className=" text-gray-900 text-center text-3xl md:text-4xl font-semibold">
           Discover Users!
         </h1>
-        {/* <h1 className=" blue-gradient text-center text-3xl md:text-4xl font-semibold">
-          Developer reviews. Rates. Interviews.
-        </h1> */}
       </div>
       <div className="flex justify-center my-6 relative mx-3">
         <div className="flex lg:w-3/5 flex-col justify-center w-full md:w-4/5 items-start border z-10 border-slate-300  bg-white/50 rounded-2xl py-5">
@@ -65,10 +59,6 @@ function DevelopersListing() {
             <h1 className="text-2xl text-start font-medium text-slate-800 px-5 my-2">
               List of Developers
             </h1>
-            {/* <div className="tabs">
-              <a className="tab tab-bordered tab-active ">Best Matches</a>
-              <a className="tab">Saved Jobs</a>
-            </div> */}
 
             {/* --------sort button--------- */}
             <FilterButton filters={filters} setDevelopers={setDevelopers} />

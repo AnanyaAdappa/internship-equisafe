@@ -20,7 +20,7 @@ function CompanyMain() {
       }
       const fetchedOrganization = await response.json();
       setOrganization(fetchedOrganization.data);
-      // console.log('fetch organization------------', fetchedOrganization.data);
+     
     } catch (error) {
       console.log("status code :", error);
       toast.error(`${error}`, {

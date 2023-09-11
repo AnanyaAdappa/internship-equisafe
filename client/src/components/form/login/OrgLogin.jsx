@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
-// import organization from '/organization.svg';
 import { useNavigate } from 'react-router-dom';
 import signin from '../../../../public/signin.jpg';
 import LoginContainer from './LoginContainer';
@@ -73,7 +72,6 @@ export default function OrgLogin() {
           });
         }
         if (data.data.access_token) {
-          // console.log("token is ", data.data.access_token);
           localStorage.setItem('authToken', data.data.access_token);
           localStorage.setItem('isOrg', data.data.organization._id);
           localStorage.setItem('orgUID', data.data.organization.uid);
@@ -83,8 +81,7 @@ export default function OrgLogin() {
           navigate('/');
           window.location.reload();
         }
-        // console.log("ORG----------", data);
-        // console.log("ORG id ----------", localStorage.getItem("isOrg"));
+       
 
         return 0;
       })
@@ -92,11 +89,11 @@ export default function OrgLogin() {
         toast.update(id, {
           render: `${error.message}`, type: "error", isLoading: false, autoClose: 2000,
         });
-        // console.log('POSTING error --> ', error);
+       
       });
   };
 
-  // console.log("Orglogin----", form);
+ 
   return (
     <LoginContainer image={signin}>
       <div className="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">

@@ -6,7 +6,6 @@ function Stepper({ steps, currentStep }) {
 
   const updateStep = (stepNumber, step) => {
     const newSteps = [...step];
-    // console.log(newSteps);
     let count = 0;
     while (count < newSteps.length) {
       // current step

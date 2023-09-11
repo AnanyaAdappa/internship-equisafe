@@ -3,7 +3,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { toast } from "react-toastify";
 import ProjectList from "../components/ProjectList";
 import FilterButton from "../components/navbar/FilterButton";
-// import loading from "../../../../../../../../SVG/loading.svg";
+
 import loading from "../../public/SVG/loading.svg";
 import Search from "../components/navbar/Search";
 import { loadingContext } from "../components/context/LoadingState";
@@ -25,14 +25,11 @@ const filters = [
     label: "Sort Z-A",
     property: "#proj_sort_dsc",
   },
-  // {
-  //   label: "Open to work",
-  //   property: "#open_for_development",
-  // },
+ 
 ];
 
 function ProjectListings() {
-  // const [isOpen, setIsOpen] = useState(false);
+ 
   const [projects, setProjects] = useState([]);
   const [searchInput, setSearchInput] = useState({ searchString: "" });
   const [saveBtnState, SetsaveBtnState] = useState(false);
@@ -76,7 +73,7 @@ function ProjectListings() {
     const fetchedProjects = await response.json();
     setProjects(fetchedProjects.data);
     await setProgress(50);
-    // alert(`${fetchedProjects.message}`);
+    
     toast.success(`${fetchedProjects.message}`, {
       position: toast.POSITION.TOP_CENTER,
       autoClose: 2000,

@@ -17,12 +17,10 @@ function ReviewVaul({
   const progressState = useContext(loadingContext);
   const { setProgress } = progressState;
 
-  // console.log("review for ", orgID);
-  // console.log("review form : ", formData);
-  // console.log("child reviewing : ", reviewVaulOpen);
+ 
 
   const patchProposal = async (reviewResponse) => {
-    // console.log("prop_uid is ", proposalUID);
+    
     let patchBody;
     if (localStorage.getItem("isDev")) {
       patchBody = {
@@ -33,7 +31,7 @@ function ReviewVaul({
         reviewedByOrg: true,
       };
     }
-    // console.log("patch body --- ", patchBody);
+   
     const response = await fetch(`${import.meta.env.VITE_API_URL}/proposals/${proposalUID}`, {
       method: "PATCH",
       headers: {
@@ -43,16 +41,12 @@ function ReviewVaul({
       body: JSON.stringify(patchBody),
     });
     const fetched = await response.json();
-    // console.log("Proposal patched ? ", fetched);
-    // alerts_toast
-    // alert(`${reviewResponse.message} and ${fetched.message}`);
     toast.success(`${reviewResponse.message} and ${fetched.message}`, {
       position: toast.POSITION.TOP_CENTER, autoClose: 2000,
     });
     fetchProposals();
   };
   const postReview = async () => {
-    // always start the loader with 0
     await setProgress(0);
     await setProgress(10);
     let bodyData;
@@ -70,13 +64,11 @@ function ReviewVaul({
     await setProgress(30);
     const data = await response.json();
     await setProgress(70);
-    // console.log("Review posted ? ", data);
     patchProposal(data);
     await setProgress(100);
   };
   const handleSubmit = () => {
     setReviewVaulOpen(false);
-    // console.log("Submitting ", reviewVaulOpen);
     postReview();
   };
 
@@ -88,7 +80,6 @@ function ReviewVaul({
   const handleClick = (value) => {
     setCurrentValue(value);
     setFormData({ ...formData, rating: value });
-    // console.log(value);
   };
 
   const handleMouseOver = (newHoverValue) => {
@@ -104,10 +95,7 @@ function ReviewVaul({
     grey: "#d4d4d8",
 
   };
-  // const reviewStar = currentValue;
-
-  // console.log(reviewStar);
-  // console.log(`${formData.rating} and ${formData.review}`);
+  
   // Reviews End
   return (
     <Drawer.Root>
@@ -137,16 +125,6 @@ function ReviewVaul({
                     />
                   ))}
                 </div>
-                {/* <input
-                  type="number"
-                  className="text-zinc-600 my-2 border border-zinc-600 p-3 w-[35%]  rounded-xl"
-                  name="rating"
-                  min="0"
-                  max="5"
-                  step="0.1"
-                  onChange={(e) => setFormData({ ...formData, rating: e.target.value })}
-                  placeholder="Rate between 0-5"
-                /> */}
                 <textarea
                   rows={5}
                   placeholder="How was your experience?"

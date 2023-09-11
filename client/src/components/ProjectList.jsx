@@ -8,7 +8,6 @@ const ProjectList = ({ projectsProp = [] }) => {
 
   let limitedProjects;
   if (!authToken) {
-    // const maxToShow = 4;
     limitedProjects = projectsProp.slice(0, 4);
   } else {
     limitedProjects = projectsProp;
@@ -19,14 +18,8 @@ const ProjectList = ({ projectsProp = [] }) => {
       uid,
       title,
       description,
-      timeframe,
-      thumbnail,  
-      project_type,
-      required_personnel,
-      //   featured,
-      //   board,
-      //   techstack,
-      //   fixed_price,
+
+      thumbnail,
     } = projects;
 
     return (
@@ -46,33 +39,13 @@ const ProjectList = ({ projectsProp = [] }) => {
               alt={title}
             />
 
-            {/* <img src="policyinsurance.jpg" alt="" className="flex place-content-start items-start  aspect-video  h-48 object-cover rounded-lg" /> */}
             <div className="flex flex-col w-full">
               {/* ------------ title------------- */}
               <h1 className="text-xl font-medium text-slate-900">{title}</h1>
 
               {/* ------------ timestamp ------------- */}
               <p className="text-sm text-slate-600">Posted by Google</p>
-              <div className="flex my-5">
-                {/* <div className="flex flex-col w-1/2 items-start justify-start gap-3">
-                  <div>
-                    <h3 className="listing-content-data">{timeframe}</h3>
-                    <h4 className="listing-content-constant">Duration</h4>
-                  </div>
-                  <div>
-                    <h3 className="listing-content-data">
-                      {required_personnel}
-                    </h3>
-                    <h4 className="listing-content-constant"></h4>
-                  </div>
-                </div> */}
-                {/* <div className="flex flex-col w-1/2 items-start justify-start gap-3">
-                  <div>
-                    <h3 className="listing-content-data">{project_type}</h3>
-                    <h4 className="listing-content-constant">Project Type</h4>
-                  </div>
-                </div> */}
-              </div>
+              <div className="flex my-5"></div>
             </div>
           </div>
 

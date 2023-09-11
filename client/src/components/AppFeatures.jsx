@@ -26,7 +26,6 @@ export default function AppFeatures() {
 
       <div className="flex flex-col md:flex-row my-8 gap-5">
         <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5 w-4/5">
-          {/* <img alt="card" src="/SVG/card-1.svg" /> */}
           <h2 className="font-semibold text-xl">
             Comprehensive Policy Selection
           </h2>
@@ -39,7 +38,6 @@ export default function AppFeatures() {
           </p>
         </div>
         <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5 w-4/5">
-          {/* <img alt="card-2" src="/SVG/card-1.svg" /> */}
           <h2 className="font-semibold text-xl">
             {" "}
             Hassle-Free Insurer Comparison
@@ -52,7 +50,6 @@ export default function AppFeatures() {
           </p>
         </div>
         <div className="flex flex-col gap-4 bg-[#164e63] rounded-xl border border-slate-800 p-5 w-4/5">
-          {/* <img alt="card-2" src="/SVG/card-1.svg" /> */}
           <h2 className="font-semibold text-xl">Tailored Policies for You</h2>
           <p className="opacity-75">
             EquiSafe goes beyond a mere listing of policies. Our platform

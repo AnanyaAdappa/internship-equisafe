@@ -1,6 +1,4 @@
 export default function StepperControl({ handleClick, currentStep, steps }) {
-  // console.log('next?->>>>', currentStep);
-  // console.log('lenght inn stepper>>>>>>', steps.length);
   return (
     <div className="container mt-4 mb-8 flex justify-between">
       <button

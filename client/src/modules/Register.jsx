@@ -1,11 +1,9 @@
-import { Link } from 'react-router-dom';
-import FormContainer from '../components/form/FormContainer';
-// import developer from '/developer.svg';
-// import organization from '/organization.svg';
-// import Skate from '/Run_Skate.png';
-import developer from '../../public/developer.svg';
-import organization from '../../public/organization.svg';
-import register from '../../public/register.jpg';
+import { Link } from "react-router-dom";
+import FormContainer from "../components/form/FormContainer";
+
+import developer from "../../public/developer.svg";
+import organization from "../../public/organization.svg";
+import register from "../../public/register.jpg";
 
 function Register() {
   return (
@@ -16,39 +14,13 @@ function Register() {
                          justify-center hover:bg-accent/5 hover:font-semibold rounded-lg h-full p-2"
           to="/register/developer"
         >
-
-        <img src="signup.jpg" alt="signup" className="h-5/6"/>
-
-
-          {/* <img
-            alt="developer"
-            src={developer}
-            className="h-auto lg:h-auto w-full object-contain"
-          />
-          <h1 className=" blue-gradient ">Developer</h1> */}
+          <img src="signup.jpg" alt="signup" className="h-5/6" />
         </Link>
-        {/* <div className="border-b border-slate-300 w-full"> </div> */}
-        {/* <Link
-          className="flex flex-col text-xl transition items-center
-                    justify-center hover:bg-accent/5 hover:font-semibold rounded-lg h-full w-[60%] max-w-full relative p-2"
-          to="/register/company"
-        >
-          <img
-            alt="organization"
-            src={organization}
-            className="h-auto lg:h-auto w-full 2xl:max-w-[100%] aspect-square object-contain"
-          />
-          <h1 className=" blue-gradient ">Organization</h1>
-        </Link> */}
       </div>
     </FormContainer>
   );
 }
 
 export default Register;
-
-
-
-
 
 // register part which is not required bcz itn will be moved to register part directly

@@ -27,8 +27,7 @@ function App() {
   const progressState = useContext(loadingContext);
   const { progress } = progressState;
 
-  // console.log("env : ", import.meta.env.VITE_API_URL);
-  // console.log("env : ", process.env.REACT_APP_API_URL);
+  
   return (
     <>
       <LoadingBar color="#6c47ff" height={10} progress={progress} />
@@ -42,7 +41,7 @@ function App() {
           <Route path="/projects/:uid" element={<ProjectMain />} />
           <Route path="/companies" element={<CompanyListings />} />
           <Route path="/companies/:uid" element={<CompanyMain />} />
-          {/* -------------Company Profile----------------- */}
+          {/* -------------ofile----------------- */}
           <Route path="/companies/:id" element={<CompanyMain />} />
           <Route path="/developers" element={<DevelopersListing />} />
           <Route path="/developers/:uid" element={<DeveloperMain />} />

@@ -10,7 +10,7 @@ import Final from '../components/form/register/developer/Final';
 import FormContainer from '../components/form/FormContainer';
 import developer from "../../public/developer.svg";
 import { loadingContext } from '../components/context/LoadingState';
-// import developer from "../../../../../../../../developer.svg";
+
 
 function RegisterDeveloper() {
   const progressState = useContext(loadingContext);
@@ -102,7 +102,7 @@ function RegisterDeveloper() {
       setValidationErrors((prevErrors) => ({ ...prevErrors, phone: "" }));
     } else if (!phone) {
       setValidationErrors((prevErrors) => ({ ...prevErrors, phone: "Phone number is required" }));
-    // eslint-disable-next-line no-useless-escape
+    
     } else if (!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
       .test(phone)) {
       setValidationErrors((prevErrors) => ({ ...prevErrors, phone: "Please enter a valid phone number" }));
@@ -151,13 +151,14 @@ function RegisterDeveloper() {
       validateLname(value);
     } else if (field === "phone") {
       validatePhone(value);
-    } else if (field === "skills") {
-      validateSkills(value);
-    } else if (field === "linkedin") {
-      validateLinkedin(value);
-    } else if (field === "github") {
-      validateGithub(value);
     }
+    //  else if (field === "skills") {
+    //   validateSkills(value);
+    // } else if (field === "linkedin") {
+    //   validateLinkedin(value);
+    // } else if (field === "github") {
+    //   validateGithub(value);
+    // }
   };
 
   const steps = ['Login Details', 'Personal Details','Review'];
@@ -201,16 +202,12 @@ function RegisterDeveloper() {
   const requiredFields1 = ['fname', 'lname', 'email', 'password'];
   const requiredFields2 = ['phone'];
 
-  // console.log('currentStep---', currentStep);
-  // console.log('steps lenght before?------', steps.length);
+ 
   const handleClick = async (direction) => {
-    // console.log('currentStep after click---', currentStep);
-    // console.log('direction------>', direction);
+   
 
     let newStep = currentStep;
-    // console.log('newstep---', newStep);
-    // console.log('lenght?------', steps.length);
-
+   
     // --- POST if the you reach at the last step
     // means when 3 === 3
     // and when back button is not clicked otherwise even for back button click, network calls will be made.
@@ -219,7 +216,7 @@ function RegisterDeveloper() {
       await setProgress(0);
       await setProgress(10);
 
-      // console.log('heyyyy ', JSON.stringify(formData));
+     
 
       // return those fields from formData which are empty.
       const emptyFields = requiredFields.filter((field) => !formData[field]);
@@ -231,7 +228,7 @@ function RegisterDeveloper() {
         toast.error(`${errorMessage}`, {
           position: toast.POSITION.TOP_CENTER, autoClose: 10000,
         });
-        // setShowModal(!showModal);
+      
         return;
       }
 
@@ -258,26 +255,26 @@ function RegisterDeveloper() {
       if (formData.city) {
         bodyData.append('city', formData.city);
       }
-      if (formData.technical_role) {
-        bodyData.append('technical_role', formData.technical_role);
-      }
-      if (formData.openToWork) {
-        bodyData.append('openToWork', formData.openToWork);
-      }
-      if (formData.linkedin) {
-        bodyData.append('linkedin', formData.linkedin);
-      }
-      if (formData.github) {
-        bodyData.append('github', formData.github);
-      }
-      if (formData.about) {
-        bodyData.append('about', formData.about);
-      }
+      // if (formData.technical_role) {
+      //   bodyData.append('technical_role', formData.technical_role);
+      // }
+      // if (formData.openToWork) {
+      //   bodyData.append('openToWork', formData.openToWork);
+      // }
+      // if (formData.linkedin) {
+      //   bodyData.append('linkedin', formData.linkedin);
+      // }
+      // if (formData.github) {
+      //   bodyData.append('github', formData.github);
+      // }
+      // if (formData.about) {
+      //   bodyData.append('about', formData.about);
+      // }
       if (formData.photo) {
         bodyData.append('photo', formData.photo);
       }
 
-      // console.log("bodyData === ", bodyData);
+     
       fetch(`${import.meta.env.VITE_API_URL}/developers/auth/register`, {
         method: 'POST',
         // when working with multipart/form-data, the browser automatically sets the appropriate Content-Type header, so you don't need to manually set it.
@@ -292,7 +289,7 @@ function RegisterDeveloper() {
         .then(async (data) => {
           await setProgress(70);
 
-          // console.log('POSTED --> ', data);
+          
           if (!data.data) {
             await setProgress(100);
             // return is imp so that it doesnt go again in catch block and update the toast again
@@ -302,7 +299,7 @@ function RegisterDeveloper() {
           }
           if (data.data.access_token) {
             await setProgress(100);
-            // console.log("token is ", data.data.access_token);
+           
             localStorage.setItem("authToken", data.data.access_token);
             localStorage.setItem('isDev', data.data.developer._id);
             localStorage.setItem('dev_uid', data.data.developer.uid);
@@ -310,7 +307,7 @@ function RegisterDeveloper() {
               position: toast.POSITION.TOP_CENTER, autoClose: 2000,
             });
             navigate("/");
-            // alert(`${data.message}`);
+         
             window.location.reload();
           } else if (data.error) {
             await setProgress(100);
@@ -348,7 +345,7 @@ function RegisterDeveloper() {
           toast.error(`${errorMessage}`, {
             position: toast.POSITION.TOP_CENTER, autoClose: 10000,
           });
-          // setShowModal(!showModal);
+         
           return;
         }
       }
@@ -363,7 +360,7 @@ function RegisterDeveloper() {
           toast.error(`${errorMessage}`, {
             position: toast.POSITION.TOP_CENTER, autoClose: 10000,
           });
-          // setShowModal(!showModal);
+         
           return;
         }
       }
