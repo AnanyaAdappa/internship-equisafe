@@ -94,7 +94,7 @@ export default function ProjectAdd() {
     fetch(`${import.meta.env.VITE_API_URL}/projects`, {
       method: "POST",
       headers: {
-        authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        authorization: localStorage.getItem("authToken"),
       },
       body: bodyData,
     })

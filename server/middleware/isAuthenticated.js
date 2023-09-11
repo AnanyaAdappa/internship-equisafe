@@ -12,7 +12,7 @@ const isDeveloperAuthenticated = (req, res, next) => {
   if (req.headers.authorization) {
     // also checking if the value of access token is right or not.
     const verification = jwt.verify(
-      req.headers.authorization.split(" ")[1],
+      req.headers.authorization,
       secret
     );
 
